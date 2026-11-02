@@ -55,7 +55,7 @@ const studies = {
 function Section({icon:Icon,title,children}){return <section className="cs-section"><div className="cs-section-title"><Icon size={17}/><h2>{title}</h2></div>{children}</section>}
 export default function CaseStudy({id,onBack}) {
   const s=studies[id] || studies.banking;
-  return <main className="case-study">
+  return <main id="main-content" className="case-study">
     <div className="cs-top"><button onClick={onBack} className="cs-back"><ArrowLeft size={15}/> Back to all work</button><span>{s.number} / SELECTED WORK</span></div>
     <header className="cs-hero"><p className="eyebrow">{s.category}</p><h1>{s.title}</h1><p className="cs-subtitle">{s.subtitle}</p><div className="cs-meta"><div><small>ROLE</small><b>{s.role}</b></div><div><small>DOMAIN</small><b>{s.domain}</b></div><div><small>FOCUS</small><b>{s.focus}</b></div></div></header>
     <div className={'cs-cover cs-cover-'+id}><div className="cs-cover-mark">{id==='banking'?'◈':id==='authenticator'?'◎':id==='jusmoto'?'J.':'360°'}</div><div className="cs-cover-caption">PRODUCT EXPERIENCE / {s.number}</div></div>
